@@ -4,7 +4,7 @@
 from flask import Flask, request, jsonify
 
 app=Flask(__name__)
-# to create the flask app
+# code to create flask app
 
 # defining route
 @app.route("/")
