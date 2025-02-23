@@ -61,7 +61,7 @@ while True:
                             continue 
                         else:
                             balance -= amount
-                            print(f"Your Transaction was Successful.\nYour updated balance is: N{balance}")
+                            print(f"Your Transaction was Successful.\nYour updated balance is: N{balance}.00")
                             break  
                     else:
                         print("Incorrect PIN! Try again.")
@@ -140,7 +140,7 @@ while True:
                         else:
                             amount+=fee
                             balance -= amount
-                            print(f"Your Transaction was Successful.\nYour updated balance is: N{balance}")
+                            print(f"Your Transaction was Successful.\nYour updated balance is: N{balance}.00")
                             break  
                     else:
                         print("Incorrect PIN! Try again.")
@@ -178,7 +178,7 @@ while True:
                             continue
 
                         balance-=Total
-                        print(f"You've succefully purchased N{amount}.00 airtime,\nYour Updated balance is {balance}")
+                        print(f"You've succefully purchased N{amount}.00 airtime,\nYour Updated balance is {balance}.00")
                         break
                 except ValueError:
                     print("Invalid input.")
@@ -201,7 +201,7 @@ while True:
                         recipient_number = Register_number
                         recipient_line = line_input
                     elif opt == "2":
-                        recipient_number = input("Enter recipient's phone number: ")
+                        recipient_number = input("Enter recipient's phone number:\n")
                         if recipient_number == Register_number:
                             print("Sorry your number can't be input here!")
                             continue
@@ -210,7 +210,7 @@ while True:
                             print("Invalid phone number. Must be 11 digits.")
                             continue
                         
-                        print("Pick recipient's mobile line")
+                        print("Pick recipient's mobile line\n")
                         i = 1
                         line = ["MTN", "AIRTEL", "GLO", "9MOBILE"]
                         for li in line:
@@ -271,7 +271,7 @@ while True:
                         continue
                     
                     balance -= plan_price
-                    print(f"You have successfully purchased {selected_plan} for {recipient_number},\nYour updated balance is N{balance}.")
+                    print(f"You have successfully purchased {selected_plan} for {recipient_number},\nYour updated balance is N{balance}.00")
                     break
                 
                 except ValueError:
@@ -285,7 +285,7 @@ while True:
                 balance_check = input("\n")
                 
                 if balance_check == set_pin:
-                    print(f"\nYour current account balance is N{balance}.")
+                    print(f"\nYour current account balance is N{balance}.00")
                     return balance 
                 else:
                     print("Invalid PIN! Please try again.\n")
@@ -339,23 +339,23 @@ while True:
                     print(f"{i}>{opt}")
                     i+=1
                 entry=input("\n").lower()
-                if entry == "1":
+                if entry == "1":    #Send to Moniepoint
                     balance=option_1(balance,set_pin)
-                elif entry == "2":
+                elif entry == "2":    #Send to other banks
                     balance=option_2(balance, set_pin)
-                elif entry == "3":
+                elif entry == "3":    #Buy airtime
                     balance=option_3(balance,set_pin,Register_number,line_input)
-                elif entry == "4":
+                elif entry == "4":    #Buy data
                     balance=option_4(balance, set_pin, Register_number, line_input)
-                elif entry == "5":
+                elif entry == "5":    #Check balance
                     balance=option_5(balance,set_pin)
-                elif entry == "6":
+                elif entry == "6":    #Change pin
                     set_pin=option_6(set_pin)
-                elif entry == "7":
+                elif entry == "7":    #Block account
                     option_7(set_pin)
                 else:
                     if entry == "quit":
-                        print(f"Okay thank you for using our services\nyour current balance is {balance}")
+                        print(f"Okay thank you for using our services\nyour current balance is {balance}.00")
                         break       
         else:
                 print("invalid input, try again!")
